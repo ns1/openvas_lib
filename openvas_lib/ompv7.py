@@ -696,17 +696,17 @@ class OMPv7(OMP):
 			request += """<schedule>%s</schedule>""" % (schedule)
 
 
-		if max_checks or max_hosts:
-			if max_checks:
-				request += """<preference>
-								<scanner_name>max_checks</scanner_name>
-								<value>%s</value>
-							</preference>""" % max_checks
-			if max_hosts:
-				request += """<preference>
-								<scanner_name>max_hosts</scanner_name>
-								<value>%s</value>
-							</preference>""" % max_hosts
+# 		if max_checks or max_hosts:
+# 			if max_checks:
+# 				request += """<preference>
+# 								<scanner_name>max_checks</scanner_name>
+# 								<value>%s</value>
+# 							</preference>""" % max_checks
+# 			if max_hosts:
+# 				request += """<preference>
+# 								<scanner_name>max_hosts</scanner_name>
+# 								<value>%s</value>
+# 							</preference>""" % max_hosts
 
 			request += """</preferences>"""
 
