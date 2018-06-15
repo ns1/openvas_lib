@@ -71,13 +71,19 @@ def report_parser_from_text(text, ignore_log_info=True):
 	:return: list of OpenVASResult structures.
 	:rtype: list(OpenVASResult)
 	"""
+	if isinstance(text, bytes):
+		text = text.decode('utf-8')
+	
 	if not isinstance(text, str):
 		raise TypeError("Expected str, got '%s' instead" % type(text))
 
 	try:
 		import cStringIO as S
 	except ImportError:
-		import StringIO as S
+		try:
+			import StringIO as S
+		except ImportError:
+			from io import StringIO
 
 	return report_parser(S.StringIO(text), ignore_log_info)
 
