@@ -83,8 +83,8 @@ def report_parser_from_text(text, ignore_log_info=True):
 		try:
 			import StringIO as S
 		except ImportError:
-			from io import StringIO
-
+			import io as S
+			
 	return report_parser(S.StringIO(text), ignore_log_info)
 
 
